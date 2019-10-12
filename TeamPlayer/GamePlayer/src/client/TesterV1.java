@@ -1,20 +1,7 @@
 package client;
 
-import java.util.ArrayList;
-import java.util.EmptyStackException;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Stack;
-import java.util.Locale.Category;
-
-import bus.Ball;
-import bus.BasketballPlayer;
-import bus.Color;
-import bus.DicePlayer;
-import bus.EnumType;
-import bus.GuitarBrand;
-import bus.GuitarPlayer;
-import bus.IPlayable;
+import java.util.*;
+import bus.*;
 
 public class TesterV1{
     public static void main(String[] args) {
@@ -210,6 +197,7 @@ public class TesterV1{
                 }
             }
         }
+        inputScanner.close();
     }
                                                                                        
     // Basketball player Stack

@@ -43,7 +43,6 @@ public class GuitarGame extends GuitarPlayer {
 	
 	public void start() {
 		System.out.println("You choosed Guitar Player");
-		EnumType playerType = EnumType.GuitarPlayer;
 		
 		while(true){
 		     System.out.println("Please input your ID (numbers only): ");
@@ -91,6 +90,7 @@ public class GuitarGame extends GuitarPlayer {
 	}
 	
 	public void end() {
-		
+		Team team = new Team();
+		team.addGuitarPlayer(new GuitarPlayer(this.id, this.name, EnumType.GuitarPlayer, this.color, this.brand, this.m1, this.m2));
 	}
 }

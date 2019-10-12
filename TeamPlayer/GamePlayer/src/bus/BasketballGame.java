@@ -3,10 +3,11 @@ package bus;
 import java.util.*;
 
 public class BasketballGame extends BasketballPlayer {
-	private ArrayList<BasketballPlayer> team;
+	private Team team = new Team();
+	private ArrayList<BasketballPlayer> basketballTeam;
 	
 	public BasketballGame() {
-		this.team = new ArrayList<BasketballPlayer>();
+		this.basketballTeam = new ArrayList<BasketballPlayer>();
 	}
 	
 	public void add(BasketballPlayer player) {
@@ -18,10 +19,10 @@ public class BasketballGame extends BasketballPlayer {
 	}
 	
 	public ArrayList<BasketballPlayer> getTeam(){
-		return this.team;
+		return this.basketballTeam;
 	}
 	public void setTeam(ArrayList<BasketballPlayer> team) {
-		this.team = team;
+		this.basketballTeam = team;
 	}
 	
 	private int score = 0;
@@ -83,8 +84,8 @@ public class BasketballGame extends BasketballPlayer {
 			Random randomSize = new Random();
 			pushBall(ballStack, Color.values()[randomColor.nextInt(Color.values().length)], ballSizes[randomSize.nextInt(ballSizes.length)]);
 		}
-		while(!playerInput.equals("back")){
-        	
+
+		for(int i = 0; i < maxBalls; i++){
 			System.out.println("Balls in your basket: ");
         	System.out.println(ballStack);
         	System.out.println();
@@ -121,11 +122,12 @@ public class BasketballGame extends BasketballPlayer {
                 System.out.println("I don't understand...");
                 System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] to exit the application");
             }
-        }
+		}
 	}
-	
 	public void end() {
-		team.add(new BasketballPlayer(id, name, EnumType.BasketballPlayer, ballStack, score, missed));
+		System.out.println("Finish!");
+		team.addBasketballPlayer(new BasketballPlayer(this.id, this.name, EnumType.BasketballPlayer, this.ballStack,
+				this.score, this.missed));
 	}
 	
 	 // Basketball player Stack
