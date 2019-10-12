@@ -1,0 +1,39 @@
+package bus;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class BasketballGame {
+	Stack<Ball> ballStack = new Stack<Ball>();
+	Scanner inputScanner = new Scanner(System.in);
+	EnumType playerType;
+	String playerInput = "";
+	long id;
+	String name;
+	public BasketballGame() {
+		
+	}
+	
+	public void Start() {
+		 
+		 while(true){
+		     System.out.println("Please input your ID (numbers only): ");
+		 try {
+		     id = Long.parseLong(inputScanner.nextLine());
+		     break;
+		 } catch (NumberFormatException e){
+		     System.out.println("Your input is invalid, please try again.");
+		     }
+		 }
+		 System.out.println("Please input your name: ");
+		 name = inputScanner.nextLine();
+	}
+	
+	public void Run() {
+		
+	}
+	
+	public void End() {
+		
+	}
+}

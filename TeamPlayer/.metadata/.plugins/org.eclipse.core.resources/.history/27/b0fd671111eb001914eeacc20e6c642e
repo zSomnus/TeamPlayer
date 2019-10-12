@@ -1,0 +1,47 @@
+package bus;
+
+import java.util.Scanner;
+
+public class GuitarGame extends GuitarPlayer {
+	private int score;
+	private String name;
+	private Scanner inputScanner = new Scanner(System.in);
+	private String playerInput;
+	
+	public int getScore() {
+		return this.score;
+	}
+	
+	public GuitarGame() {
+		
+	}
+	
+	public void start() {
+		System.out.println("You choosed Guitar Player");
+		EnumType playerType = EnumType.GuitarPlayer;
+	}
+	
+	public void run() {
+		while(true) {
+			System.out.println("Choose a music by input the index of the music");
+			System.out.println(" 1. Secret Base \n 2. Miracle Mountain");
+			System.out.println("or input [back] to back to the Main Menu");
+			playerInput = inputScanner.nextLine();
+			
+			if(playerInput.equals("1")){
+				System.out.println("Play \"Secret Base\"");
+			}else if(playerInput.equals("2")){
+				System.out.println("Play \"Miracle Mountain\"");
+			}else if(playerInput.equals("back")){
+				break;
+			}
+			else{
+				System.out.println("I don't understand");
+			}
+		}
+	}
+	
+	public void end() {
+		
+	}
+}

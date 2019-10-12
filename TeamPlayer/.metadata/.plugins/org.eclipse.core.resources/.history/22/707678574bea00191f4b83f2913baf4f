@@ -1,0 +1,44 @@
+package bus;
+
+import java.util.Stack;
+
+public class BasketballPlayer extends GamePlayer implements IPlayable {
+
+	private Stack<Ball> ballStack = new Stack<Ball>();
+	private int basket;
+	private int missed;
+
+	public BasketballPlayer(){
+		super();
+		this.ballStack = new Stack<Ball>();
+	}
+
+	public BasketballPlayer(long id, String name, EnumType category, Stack<Ball> stack, int basket){
+		super(id, name, category);
+		this.ballStack = stack;
+		this.basket = basket;
+	}
+
+	// encapsulation 
+	public Stack<Ball> getBallStack(){
+		return this.ballStack;
+	}
+	public void setBallStack(Stack<Ball> stack){
+		this.ballStack = stack;
+	}
+
+	public int getBasket(){
+		return this.basket;
+	}
+	public void setBasket(int value){
+		this.basket = value;
+	}
+
+	public String toString(){
+		return "[" + super.toString() + " has "  + basket + " in basket.]";
+	}
+
+	public int countScore(){
+		return this.basket * 2;
+	}
+}

@@ -1,0 +1,56 @@
+package bus;
+
+public class GuitarPlayer extends GamePlayer implements IPlayable {
+	private int score;
+	private Color color;
+	private GuitarBrand brand;
+	private String[][] catalog;
+	
+	public GuitarPlayer() {
+		super();
+		this.color = Color.Black;
+		this.brand = GuitarBrand.Gibson;
+		this.catalog = new String[][]{};
+	}
+
+	public GuitarPlayer(long id, String name, EnumType category, Color color, GuitarBrand brand, String[][] catalog){
+		super(id, name, category);
+		this.color = color;
+		this.brand = brand;
+		this.catalog = catalog;
+	}
+	
+	public Color getColor() {
+		return this.color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+	public GuitarBrand getBrand() {
+		return this.brand;
+	}
+	public void setBrand(GuitarBrand brand) {
+		this.brand = brand;
+	}
+
+	public String[][] getCatalog(){
+		return this.catalog;
+	}
+	public void setCatalog(String[][] catalog){
+		this.catalog = catalog;
+	}
+
+	public int getScore(){
+		return this.score;
+	}
+	
+	public String toString() {
+		return super.toString() + "[" + this.color + " " + this.brand + "]" + "\n" + "Music I can play: \n" + this.catalog;
+	}
+
+	public int countScore(){
+		return this.score;
+	}
+		
+}

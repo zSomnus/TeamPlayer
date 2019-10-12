@@ -1,0 +1,122 @@
+package bus;
+
+import java.util.EmptyStackException;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class BasketballGame {
+	int score = 0;
+	Stack<Ball> ballStack = new Stack<Ball>();
+	Scanner inputScanner = new Scanner(System.in);
+	EnumType playerType;
+	String playerInput = "";
+	long id;
+	String name;
+	
+	float[] ballSizes = {29.5f, 28.5f, 27.5f, 25.5f};
+	
+	public BasketballGame() {
+		
+	}
+	
+	public void Start() {
+		System.out.println("You choosed Basketball Player");
+		playerType = EnumType.BasketballPlayer;
+		
+		 
+		 while(true){
+		     System.out.println("Please input your ID (numbers only): ");
+		 try {
+		     id = Long.parseLong(inputScanner.nextLine());
+		     break;
+		 } catch (NumberFormatException e){
+		     System.out.println("Your input is invalid, please try again.");
+		     }
+		 }
+		 System.out.println("Please input your name: ");
+		 name = inputScanner.nextLine();
+	}
+	
+	public void Run() {
+		BasketballPlayer basketballPlayer = new BasketballPlayer();
+		while(!playerInput.equals("back")){
+        	
+        	for(int i = 0; i < 10; i++) {
+        		Random randomColor = new Random();
+                Random randomSize = new Random();
+                pushBall(ballStack, Color.values()[randomColor.nextInt(Color.values().length)], ballSizes[randomSize.nextInt(ballSizes.length)]);
+        	}
+        	
+            System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] to exit the application");
+            //Scanner playerInputScanner = new Scanner(System.in);
+            playerInput = inputScanner.nextLine();
+            if(playerInput.equals("t")){
+                try {
+                    System.out.println("pop ball");
+                    popBall(ballStack);
+                    Random random = new Random();
+                    int probability = random.nextInt(10);
+
+                    if(probability > 2){
+                        score++;
+                        basketballPlayer.setBasket(score);
+                        System.out.println("Score: " + basketballPlayer.countScore());
+                    }
+                    else{
+                        System.out.println("You missed...");
+                    }
+
+                } catch (EmptyStackException e) {
+                    System.out.println("empty stack, please pick a ball first by input [p]");
+                }
+                
+            }else if(playerInput.equals("p") && ballStack.size() < 10){
+                Random randomColor = new Random();
+                Random randomSize = new Random();
+                pushBall(ballStack, Color.values()[randomColor.nextInt(Color.values().length)], ballSizes[randomSize.nextInt(ballSizes.length)]);
+                System.out.println("push ball");
+            }else if(ballStack.size() >= 10){
+                System.out.println("You can only have no more than 10 balls, throw by input [t] or exit application by input [back]");
+            }
+            else if(playerInput.equals("back")){
+                break;
+            }
+            else{
+                System.out.println("I don't understand...");
+                System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] to exit the application");
+                System.out.println(playerInput);
+            }
+        }
+        break;
+
+	}
+	
+	public void End() {
+		
+	}
+	
+	 // Basketball player Stack
+    static void pushBall(Stack<Ball> stack, Color color, float size) {
+        stack.push(new Ball(color, size));
+        System.out.println("push( new Ball( " +  color + ", " + size + ")) ");
+        System.out.println("stack: " + stack);
+    }
+    static void popBall(Stack<Ball> stack){
+        System.out.print("pop -> ");
+        Ball ball = (Ball) stack.pop();
+        System.out.println(ball);
+        System.out.println("stack: " + stack);
+    }
+
+    static int findHighestScore(int highest, int current){
+        int highestScore;
+        if(current > highest){
+            highestScore = current;
+        }
+        else{
+            highestScore = highest;
+        }
+        return highestScore;
+    }
+}

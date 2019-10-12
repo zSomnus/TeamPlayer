@@ -1,0 +1,22 @@
+package bus;
+
+import java.util.Scanner;
+
+public class GuitarGame {
+	
+	public GuitarGame() {
+		
+	}
+	
+	public void start() {
+		
+	}
+	
+	public void run() {
+		
+	}
+	
+	public void end() {
+		
+	}
+}
