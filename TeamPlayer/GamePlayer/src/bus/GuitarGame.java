@@ -12,6 +12,9 @@ public class GuitarGame extends GuitarPlayer {
 	private String playerInput;
 	private Color color;
 	private GuitarBrand brand;
+
+	private String m1Location;
+	private String m2Location;
 	
 	public long getId() {
 		return this.id;
@@ -90,7 +93,6 @@ public class GuitarGame extends GuitarPlayer {
 	}
 	
 	public void end() {
-		Team team = new Team();
-		team.addGuitarPlayer(new GuitarPlayer(this.id, this.name, EnumType.GuitarPlayer, this.color, this.brand, this.m1, this.m2));
+		System.out.println("Finish!");
 	}
 }

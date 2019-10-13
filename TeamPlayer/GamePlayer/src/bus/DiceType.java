@@ -5,5 +5,6 @@ public enum DiceType{
     D6, 
     D8, 
     D12, 
-    D20
+    D20,
+    Undefind
 }

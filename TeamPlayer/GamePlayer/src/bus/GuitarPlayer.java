@@ -42,7 +42,7 @@ public class GuitarPlayer extends GamePlayer implements IPlayable {
 	}
 	
 	public String toString() {
-		return super.toString() + "[" + this.color + " " + this.brand + "]" + "[First music: " + this.m1 + " times / Second music: " + m2 + " times]" + "\t";
+		return super.toString() + " [" + this.color + " " + this.brand + "] " + "[First music: " + this.m1 + " times / Second music: " + m2 + " times]";
 	}
 
 	public int countScore(){

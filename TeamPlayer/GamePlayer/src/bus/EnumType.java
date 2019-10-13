@@ -1,5 +1,5 @@
 package bus;
 
 public enum EnumType {
-	BasketballPlayer, GuitarPlayer, DicePlayer
+	BasketballPlayer, GuitarPlayer, DicePlayer, Undefind
 }

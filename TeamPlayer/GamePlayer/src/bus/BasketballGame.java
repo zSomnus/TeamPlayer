@@ -60,21 +60,24 @@ public class BasketballGame extends BasketballPlayer {
 	}
 	
 	public void start() {
-		System.out.println("You choosed Basketball Player");
+		System.out.println("** You choosed Basketball Player **");
 		playerType = EnumType.BasketballPlayer;
 		
 		 
 		 while(true){
-		     System.out.println("Please input your ID (numbers only): ");
-		 try {
-		     id = Long.parseLong(inputScanner.nextLine());
-		     break;
-		 } catch (NumberFormatException e){
-		     System.out.println("Your input is invalid, please try again.");
-		     }
-		 }
-		 System.out.println("Please input your name: ");
-		 name = inputScanner.nextLine();
+			 System.out.println("Please input your ID (numbers only): ");
+			 try {
+				 id = Long.parseLong(inputScanner.nextLine());
+				 break;
+				} catch (NumberFormatException e){
+					System.out.println("Your input is invalid, please try again.");
+					System.out.println("----------------------------------------");
+			}
+		}
+		System.out.println("-------------------------------------");
+		System.out.println("Please input your name: ");
+		name = inputScanner.nextLine();
+		System.out.println("------------------------");
 	}
 	
 	public void run() {
@@ -86,48 +89,59 @@ public class BasketballGame extends BasketballPlayer {
 		}
 
 		for(int i = 0; i < maxBalls; i++){
-			System.out.println("Balls in your basket: ");
+			System.out.println("-------------------------");
+			System.out.println("| Balls in your basket: |");
+			System.out.println("-------------------------");
         	System.out.println(ballStack);
         	System.out.println();
-            System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] to exit the application");
+			System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] back to the Main Menu");
             //Scanner playerInputScanner = new Scanner(System.in);
             playerInput = inputScanner.nextLine();
+			System.out.println("--------------------------------------------------------------------------------");
             if(playerInput.equals("t")){
                 try {
-                    System.out.println("pop ball");
-                    popBall(ballStack);
+					System.out.println("\n------------");
+					System.out.print("| pop ball |");
+					popBall(ballStack);
+					System.out.println("------------");
                     Random random = new Random();
                     int probability = random.nextInt(10);
 
                     if(probability > 4){
                         score++;
-                        basketballPlayer.setBasket(score);
-                        System.out.println("Score: " + basketballPlayer.countScore());
+						basketballPlayer.setBasket(score);
+						System.out.println("[ Score: " + basketballPlayer.countScore() + " ]");
                     }
                     else{
-                        System.out.println("You missed...");
+						System.out.println("\n-----------------");
+						System.out.println("| You missed... |");
+						System.out.println("-----------------\n");
                         missed++;
                         basketballPlayer.setMissed(missed);
                     }
 
                 } 
                 catch (EmptyStackException e) {
-                    System.out.println("empty basket, please input [back] back to the main menu");
+					System.out.println("\n-----------------------------------------------------------");
+					System.out.println("| empty basket, please input [back] back to the main menu |");
+					System.out.println("-----------------------------------------------------------\n");
                 }
             }
             else if(playerInput.equals("back")){
                 break;
             }
             else{
-                System.out.println("I don't understand...");
+				System.out.println("\n-------------------------");
+				System.out.println("| I don't understand... |");
+				System.out.println("-------------------------\n");
                 System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] to exit the application");
             }
 		}
 	}
 	public void end() {
-		System.out.println("Finish!");
-		team.addBasketballPlayer(new BasketballPlayer(this.id, this.name, EnumType.BasketballPlayer, this.ballStack,
-				this.score, this.missed));
+		System.out.println("\n=============");
+		System.out.println("|| Finish! ||");
+		System.out.println("=============\n");
 	}
 	
 	 // Basketball player Stack
@@ -137,9 +151,8 @@ public class BasketballGame extends BasketballPlayer {
         //System.out.println("stack: " + stack);
     }
     static void popBall(Stack<Ball> stack){
-        System.out.print("pop -> ");
         Ball ball = (Ball) stack.pop();
-        System.out.println(ball);
+        System.out.println(" >>>> " + ball);
         //System.out.println("stack: " + stack);
     }
 
