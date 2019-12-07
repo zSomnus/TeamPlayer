@@ -64,27 +64,32 @@ public class DiceGame {
 		switch(dice.getType()){
 			case D4:
 				maxPoint = 4;
-				System.out.println("Point: " + 4);
+				this.dice.setShape(EnumShape.Tetrahedron);
+				System.out.println("Faces: " + 4);
 				break;
 
 			case D6:
 				maxPoint = 6;
-				System.out.println("Point: " + 6);
+				this.dice.setShape(EnumShape.Cube);
+				System.out.println("Faces: " + 6);
 				break;
 
 			case D8:
 				maxPoint = 8;
-				System.out.println("Point: " + 8);
+				this.dice.setShape(EnumShape.Octahedron);
+				System.out.println("Faces: " + 8);
 				break;
 
 			case D12:
 				maxPoint = 12;
-				System.out.println("Point: " + 12);
+				this.dice.setShape(EnumShape.Dodecahedron);
+				System.out.println("Faces: " + 12);
 				break;
 
 			case D20:
 				maxPoint = 20;
-				System.out.println("Point: " + 20);
+				this.dice.setShape(EnumShape.Icosahedron);
+				System.out.println("Faces: " + 20);
 				break;
 
 			default:

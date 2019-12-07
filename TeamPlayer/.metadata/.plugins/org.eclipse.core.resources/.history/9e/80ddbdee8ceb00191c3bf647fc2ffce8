@@ -1,7 +1,0 @@
-package bus;
-
-public interface IPlayable{
-    public abstract int countScore();
-    public void setScore(int score);
-    public void setColor(Color color);
-}
