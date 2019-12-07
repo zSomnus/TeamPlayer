@@ -64,7 +64,7 @@ public class TesterV3{
                         DiceGame diceGame = new DiceGame();
                         diceGame.start();
                         diceGame.run();
-                        DicePlayer dicePlayer = new DicePlayer(diceGame.getId(), diceGame.getName(), EnumType.DicePlayer, diceGame.getDiceType(), diceGame.getPoints());
+                        DicePlayer dicePlayer = new DicePlayer(diceGame.getId(), diceGame.getName(), EnumType.DicePlayer, diceGame.getDice(), diceGame.getPoints());
                         iPlayableList.add(dicePlayer);
                         team.add(dicePlayer);
                         diceGame.end();

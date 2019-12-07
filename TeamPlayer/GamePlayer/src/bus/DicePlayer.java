@@ -3,16 +3,20 @@ package bus;
 public class DicePlayer extends GamePlayer implements IPlayable{
 
     private int totalPoints;
-    private DiceType type;
+    // private DiceType type;
+    private Dice dice;
 
     public DicePlayer(){
         this.totalPoints = 0;
-        this.type = DiceType.D6;
+        // this.type = DiceType.D6;
+        this.dice = new Dice();
     }
 
-    public DicePlayer(long id, String name, EnumType category, DiceType type, int points){
+    // public DicePlayer(long id, String name, EnumType category, DiceType type, int points)
+    public DicePlayer(long id, String name, EnumType category, Dice dice, int points){
         super(id, name, category);
-        this.type = type;
+        this.dice = dice;
+        // this.type = type;
         this.totalPoints = points;
     }
 
@@ -23,21 +27,28 @@ public class DicePlayer extends GamePlayer implements IPlayable{
         this.totalPoints = points;
     }
 
-    public DiceType getDiceType(){
-        return this.type;
+    // public DiceType getDiceType(){
+    //     return this.type;
+    // }
+    // public void setDiceType(DiceType type){
+    //     this.type = type;
+    // }
+
+    public Dice getDice(){
+        return this.dice;
     }
-    public void setDiceType(DiceType type){
-        this.type = type;
+    public void setDice(Dice dice){
+        this.dice = dice;
     }
 
     public String toString(){
-        return super.toString() + " [Dice type: " + this.type + "]" + " [Total Point(s): " + this.totalPoints + "]";
+        return super.toString() + this.dice + " [Total Point(s): " + this.totalPoints + "]";
     }
 
     public int countScore(){
         //int num = 90;
 
-        switch(this.type){
+        switch(this.dice.getType()){
             case D4:
                 return Math.round(this.totalPoints * 1.5f);
     

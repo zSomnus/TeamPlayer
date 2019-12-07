@@ -8,7 +8,8 @@ public class DiceGame {
 	private long id;
 	private String name;
 	private Scanner inputScanner = new Scanner(System.in);
-	private DiceType type;
+	private Dice dice;
+	// private DiceType type;
 	private String playerInput;
 	private int point;
 	private int maxPoint;
@@ -20,8 +21,12 @@ public class DiceGame {
 	public String getName() {
 		return this.name;
 	}
-	public DiceType getDiceType(){
-		return this.type;
+	// public DiceType getDiceType(){
+	// 	return this.type;
+	// }
+
+	public Dice getDice(){
+		return this.dice;
 	}
 	public int getPoints(){
 		return this.totalPoints;
@@ -30,7 +35,8 @@ public class DiceGame {
 	public DiceGame() {
 		this.id = 0;
 		this.name = "";
-		this.type = DiceType.Undefind;
+		// this.type = DiceType.Undefind;
+		this.dice = new Dice();
 	}
 	
 	public void start() {
@@ -51,10 +57,11 @@ public class DiceGame {
 	
 	public void run() {
 		Random randomDice = new Random();
-		type = DiceType.values()[randomDice.nextInt(DiceType.values().length - 1)];
-		System.out.println("You got a " + type + " Dice. \n");
+		dice.setType(DiceType.values()[randomDice.nextInt(DiceType.values().length - 1)]); 
+		// type = DiceType.values()[randomDice.nextInt(DiceType.values().length - 1)];
+		System.out.println("You got a " + dice.toString() + " Dice. \n");
 
-		switch(type){
+		switch(dice.getType()){
 			case D4:
 				maxPoint = 4;
 				System.out.println("Point: " + 4);

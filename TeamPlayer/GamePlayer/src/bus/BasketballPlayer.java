@@ -5,8 +5,8 @@ import java.util.Stack;
 public class BasketballPlayer extends GamePlayer implements IPlayable {
 
 	private Stack<Ball> ballStack = new Stack<Ball>();
-	private int basket;
-	private int missed;
+	private int basket; // How mavy balls are inside the busket
+	private int missed;	// How many balls did I miss
 
 	public BasketballPlayer(){
 		super();
