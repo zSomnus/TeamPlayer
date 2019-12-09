@@ -13,7 +13,7 @@ import java.util.Random;
 
 import java.io.File;
 
-public class GuitarGame extends GuitarPlayer {
+public class GuitarGame {
 	private int m1;
 	private int m2;
 	private long id;

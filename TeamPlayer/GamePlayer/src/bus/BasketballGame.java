@@ -2,7 +2,7 @@ package bus;
 
 import java.util.*;
 
-public class BasketballGame extends BasketballPlayer {
+public class BasketballGame {
 	private Team team = new Team();
 	private ArrayList<BasketballPlayer> basketballTeam;
 	
@@ -94,7 +94,7 @@ public class BasketballGame extends BasketballPlayer {
 			System.out.println("-------------------------");
         	System.out.println(ballStack);
         	System.out.println();
-			System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] back to the Main Menu");
+			System.out.println("Input [t] to throw a ball or [back] back to the Main Menu");
             //Scanner playerInputScanner = new Scanner(System.in);
             playerInput = inputScanner.nextLine();
 			System.out.println("--------------------------------------------------------------------------------");
@@ -134,7 +134,8 @@ public class BasketballGame extends BasketballPlayer {
 				System.out.println("\n-------------------------");
 				System.out.println("| I don't understand... |");
 				System.out.println("-------------------------\n");
-                System.out.println("Input [t] to throw a ball, [p] to pick up a ball or [back] to exit the application");
+                System.out.println("Input [t] to throw a ball or [back] to exit the application");
+                i--;
             }
 		}
 	}
