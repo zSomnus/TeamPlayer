@@ -6,16 +6,16 @@ import java.sql.SQLException;
 
 public class ConnectionDB {
 
-    public static Connection getInstance() throws SQLException{
-        Connection myConnection;
-
+    public static Connection getInstance() throws SQLException {
+		Connection myConnection;
+	
         String username = "system";
         String password = "123";
         String service = "localhost";
-        String url = "jdbc:oracle:thin";
+        String url = "jdbc:oracle:thin:";
 
-        myConnection = DriverManager.getConnection(url + username + '/' + password + '@' + service);
-
+        myConnection = DriverManager.getConnection(url+username+"/"+password+"@"+service);
+    
         return myConnection;
     }
 

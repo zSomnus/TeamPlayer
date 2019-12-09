@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesterV1<GamePlayer>",
+            "request": "launch",
+            "mainClass": "client.TesterV1",
+            "projectName": "GamePlayer"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesterV2<GamePlayer>",
+            "request": "launch",
+            "mainClass": "client.TesterV2",
+            "projectName": "GamePlayer"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesterV3<GamePlayer>",
+            "request": "launch",
+            "mainClass": "client.TesterV3",
+            "projectName": "GamePlayer"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TesterV4<GamePlayer>",
+            "request": "launch",
+            "mainClass": "client.TesterV4",
+            "projectName": "GamePlayer"
+        }
+    ]
+}

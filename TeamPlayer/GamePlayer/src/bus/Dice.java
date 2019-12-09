@@ -1,7 +1,5 @@
 package bus;
 
-import java.lang.ProcessBuilder.Redirect.Type;
-
 public class Dice{
     private Color color;
     private EnumShape shape;

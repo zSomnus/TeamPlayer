@@ -56,8 +56,14 @@ public class DiceGame {
 	}
 	
 	public void run() {
+		// Set random dice type
 		Random randomDice = new Random();
 		dice.setType(DiceType.values()[randomDice.nextInt(DiceType.values().length - 1)]); 
+		
+		// Set random dice color
+		Random randomColor = new Random();
+		dice.setColor(Color.values()[randomColor.nextInt(Color.values().length) - 1]);
+		
 		// type = DiceType.values()[randomDice.nextInt(DiceType.values().length - 1)];
 		System.out.println("You got a " + dice.toString() + " Dice. \n");
 
