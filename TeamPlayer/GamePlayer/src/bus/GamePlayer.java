@@ -1,12 +1,17 @@
 package bus;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 
 import data.PlayerDB;
 
-public class GamePlayer {	
+public class GamePlayer implements Serializable {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long id;
 	private String name;
 	private EnumType category;
