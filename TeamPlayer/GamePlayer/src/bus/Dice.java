@@ -1,7 +1,13 @@
 package bus;
 
-public class Dice{
-    private Color color;
+import java.io.Serializable;
+
+public class Dice implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Color color;
     private EnumShape shape;
     private DiceType type;
 
